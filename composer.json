@@ -1,0 +1,23 @@
+{
+  "name": "danjdewhurst/drupal-tracker",
+  "type": "drupal-module",
+  "description": "A fork of the Drupal 8 Tracker module",
+  "keywords": [
+    "drupal",
+    "drupal-8"
+  ],
+  "homepage": "https://github.com/danjdewhurst/drupal-tracker",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Daniel Dewhurst",
+      "email": "danjdewhurst@gmail.com",
+      "role": "Web Developer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "^7.1"
+  }
+}
