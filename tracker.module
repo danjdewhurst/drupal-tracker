@@ -50,13 +50,17 @@ function tracker_cron() {
 
     $nids = \Drupal::entityQuery('node')
       ->condition('nid', $max_nid, '<=')
-      ->condition('uid' , 0, '!=')
       ->sort('nid', 'DESC')
       ->range(0, \Drupal::config('tracker.settings')->get('cron_index_limit'))
       ->execute();
 
     $nodes = Node::loadMultiple($nids);
     foreach ($nodes as $nid => $node) {
+
+      // Skip nodes owned by anonymous.
+      if($node->getOwnerId() == 0) {
+        continue;
+      }
 
       // Calculate the changed timestamp for this node.
       $changed = _tracker_calculate_changed($node);
