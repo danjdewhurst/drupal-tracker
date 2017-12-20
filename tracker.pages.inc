@@ -101,11 +101,11 @@ function tracker_page($account = NULL) {
             '#account' => $node->getOwner(),
           ],
         ],
-        'comments' => [
+        /* 'comments' => [
           'class' => ['comments'],
           'data' => $comments,
           'data-history-node-last-comment-timestamp' => $node->last_comment_timestamp,
-        ],
+        ], */
         'last updated' => [
           'data' => t('@time ago', [
             '@time' => \Drupal::service('date.formatter')->formatTimeDiffSince($node->last_activity),
@@ -128,7 +128,7 @@ function tracker_page($account = NULL) {
 
   $page['tracker'] = [
     '#rows' => $rows,
-    '#header' => [t('Type'), t('Title'), t('Author'), t('Comments'), t('Last updated')],
+    '#header' => [t('Type'), t('Title'), t('Author'), /*t('Comments'),*/ t('Last updated')],
     '#type' => 'table',
     '#empty' => t('No content available.'),
   ];
