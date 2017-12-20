@@ -50,6 +50,7 @@ function tracker_cron() {
 
     $nids = \Drupal::entityQuery('node')
       ->condition('nid', $max_nid, '<=')
+      ->condition('uid' , 0, '!=')
       ->sort('nid', 'DESC')
       ->range(0, \Drupal::config('tracker.settings')->get('cron_index_limit'))
       ->execute();

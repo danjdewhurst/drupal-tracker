@@ -60,7 +60,7 @@
 
       if (timestamp > lastViewTimestamp) {
         var message = lastViewTimestamp === 0 ? newNodeString : updatedNodeString;
-        $(placeholder).append('<span class="marker">' + message + '</span>');
+        $(placeholder).append(' <span class="marker">' + message + '</span>');
       }
     });
   }

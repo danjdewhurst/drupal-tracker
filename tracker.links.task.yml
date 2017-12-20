@@ -9,7 +9,7 @@ tracker.users_recent_tab:
   base_route: tracker.page
   class: '\Drupal\tracker\Plugin\Menu\UserTrackerTab'
 
-tracker.user_tab:
-  route_name: tracker.user_tab
+tracker.users_recent_content:
+  route_name: tracker.users_recent_content
   base_route: entity.user.canonical
   title: 'Activity'
